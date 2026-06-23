@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.gclt.com.pk
+
+# Sitemaps
+Sitemap: https://www.gclt.com.pk/sitemap.xml

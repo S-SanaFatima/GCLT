@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#EEF1F6"/>
+  <rect x="100" y="150" width="600" height="300" rx="8" fill="#1A3E8C" opacity="0.1"/>
+  <text x="400" y="320" text-anchor="middle" fill="#1A3E8C" font-family="Arial,sans-serif" font-size="28" font-weight="bold">About GCLT</text>
+</svg>

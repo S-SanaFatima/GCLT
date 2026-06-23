@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#122D6B"/>
+  <circle cx="300" cy="200" r="150" fill="#1A3E8C"/>
+  <circle cx="1600" cy="800" r="200" fill="#1A3E8C"/>
+  <text x="960" y="560" text-anchor="middle" fill="#F5A623" font-family="Arial,sans-serif" font-size="36" font-weight="bold">AI &amp; Society Conference</text>
+</svg>
