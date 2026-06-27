@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:hostinger": "BUILD_TARGET=hostinger npm run build && node scripts/prepare-hostinger.mjs",
+    "package:hostinger": "npm run build:hostinger && cd hostinger-deploy && zip -r ../gclt-hostinger.zip .",
     "start": "next start",
     "lint": "next lint",
     "postbuild": "next-sitemap"

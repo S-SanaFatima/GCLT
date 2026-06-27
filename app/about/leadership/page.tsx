@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
+import ClientRedirect from '@/components/shared/ClientRedirect';
 
 export default function LeadershipPage() {
-  redirect('/about/team');
+  return <ClientRedirect to="/about/team/" />;
 }

@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound, redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
+import ClientRedirect from '@/components/shared/ClientRedirect';
 import PageHero from '@/components/shared/PageHero';
 import { getFacultyBySlug, legacyFacultySlugs, facultyMembers } from '@/lib/data/faculty';
 import { Linkedin, ExternalLink } from 'lucide-react';
@@ -26,7 +27,9 @@ export function generateMetadata({ params }: Props): Metadata {
 
 export default function FacultyProfilePage({ params }: Props) {
   if (legacyFacultySlugs[params.slug]) {
-    redirect(`/about/team/${legacyFacultySlugs[params.slug]}`);
+    return (
+      <ClientRedirect to={`/about/team/${legacyFacultySlugs[params.slug]}/`} />
+    );
   }
 
   const member = getFacultyBySlug(params.slug);

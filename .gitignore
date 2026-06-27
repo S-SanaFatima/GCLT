@@ -13,6 +13,9 @@
 
 # production
 /build
+/out
+/hostinger-deploy
+/gclt-hostinger.zip
 
 # misc
 .DS_Store

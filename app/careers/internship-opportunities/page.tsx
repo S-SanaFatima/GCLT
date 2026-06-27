@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import PageHero from '@/components/shared/PageHero';
 import Link from 'next/link';
+import ApplyNowButton from '@/components/shared/ApplyNowButton';
 import { SITE } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -28,9 +29,13 @@ export default function InternshipOpportunitiesPage() {
           <Link href="/academics/internships" className="btn-primary mr-4 inline-flex">
             Learn More
           </Link>
-          <a href={`mailto:${SITE.emails.careers}?subject=Internship Application`} className="btn-outline inline-flex">
+          <ApplyNowButton
+            formKey="internship"
+            className="btn-outline inline-flex items-center gap-2"
+            fallbackHref={`mailto:${SITE.emails.careers}?subject=Internship Application`}
+          >
             Apply Now
-          </a>
+          </ApplyNowButton>
         </div>
       </section>
     </>

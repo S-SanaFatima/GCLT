@@ -6,6 +6,7 @@ import AnimatedSection from '@/components/shared/AnimatedSection';
 import AccordionItem from '@/components/shared/AccordionItem';
 import { institutionMotto } from '@/lib/data/institution';
 import type { IERPProgrammePage, IERPProgrammeSection } from '@/lib/data/ierpProgrammes';
+import { buildGoogleFormUrl } from '@/lib/googleForms';
 import { SITE } from '@/lib/utils';
 
 interface IERPProgrammePageContentProps {
@@ -62,6 +63,8 @@ export default function IERPProgrammePageContent({
 }: IERPProgrammePageContentProps) {
   const ctaLabel = programme.primaryCta ?? 'Enroll Now';
   const mailto = `mailto:${SITE.emails.admissions}?subject=${encodeURIComponent(programme.enrollSubject)}`;
+  const applyUrl = buildGoogleFormUrl('admissions', { program: programme.title }) ?? mailto;
+  const opensInNewTab = applyUrl.startsWith('http');
 
   return (
     <>
@@ -219,7 +222,12 @@ export default function IERPProgrammePageContent({
                         </div>
                       ))}
                     </dl>
-                    <a href={mailto} className="btn-accent mt-6 w-full">
+                    <a
+                      href={applyUrl}
+                      target={opensInNewTab ? '_blank' : undefined}
+                      rel={opensInNewTab ? 'noopener noreferrer' : undefined}
+                      className="btn-accent mt-6 w-full"
+                    >
                       {ctaLabel}
                     </a>
                     <Link
@@ -262,7 +270,12 @@ export default function IERPProgrammePageContent({
               <p className="text-lg leading-relaxed text-[var(--color-text-light)]">
                 {programme.closing}
               </p>
-              <a href={mailto} className="btn-primary mt-8 inline-flex">
+              <a
+                href={applyUrl}
+                target={opensInNewTab ? '_blank' : undefined}
+                rel={opensInNewTab ? 'noopener noreferrer' : undefined}
+                className="btn-primary mt-8 inline-flex"
+              >
                 {ctaLabel}
               </a>
             </AnimatedSection>
@@ -271,7 +284,12 @@ export default function IERPProgrammePageContent({
       )}
 
       <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-border bg-white p-4 shadow-lg lg:hidden">
-        <a href={mailto} className="btn-accent w-full">
+        <a
+          href={applyUrl}
+          target={opensInNewTab ? '_blank' : undefined}
+          rel={opensInNewTab ? 'noopener noreferrer' : undefined}
+          className="btn-accent w-full"
+        >
           {ctaLabel}
         </a>
       </div>

@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import PageHero from '@/components/shared/PageHero';
 import Link from 'next/link';
+import ApplyNowButton from '@/components/shared/ApplyNowButton';
+import EmbeddedGoogleForm from '@/components/shared/GoogleFormSection';
 import { SITE } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -68,7 +70,7 @@ export default function InternshipsPage() {
           <h3 className="mb-3 text-primary">How to Apply</h3>
           <ol className="mb-6 list-decimal space-y-2 pl-5 text-[var(--color-text-light)]">
             <li>Prepare your CV and a brief statement of interest (300–500 words)</li>
-            <li>Email to admissions@gclt.com.pk with &ldquo;Internship Application&rdquo; in the subject line</li>
+            <li>Complete the online application form below and upload your CV</li>
             <li>Shortlisted candidates will be invited for an interview</li>
           </ol>
 
@@ -77,15 +79,27 @@ export default function InternshipsPage() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a
-              href={`mailto:${SITE.emails.admissions}?subject=Internship Application`}
-              className="btn-primary inline-flex"
+            <ApplyNowButton
+              formKey="internship"
+              className="btn-primary inline-flex items-center gap-2"
+              fallbackHref={`mailto:${SITE.emails.admissions}?subject=Internship Application`}
             >
-              Apply via Email
-            </a>
+              Apply Now
+            </ApplyNowButton>
             <Link href="/careers/internship-opportunities" className="btn-outline inline-flex">
               Careers: Internship Opportunities
             </Link>
+          </div>
+
+          <div className="mt-12">
+            <EmbeddedGoogleForm
+              formKey="internship"
+              title="Internship application form"
+              description="Submit your application and upload your CV below. Files are stored securely in Google Drive."
+              height={1800}
+              sectionId="internship-form"
+              fallbackHref={`mailto:${SITE.emails.admissions}?subject=Internship Application`}
+            />
           </div>
         </div>
       </section>

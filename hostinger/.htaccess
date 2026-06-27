@@ -1,0 +1,36 @@
+# GCLT — Hostinger Apache / LiteSpeed (upload to public_html with site files)
+
+Options -MultiViews
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Legacy URL redirects (mirrors next.config.js redirects)
+  RewriteRule ^academics/diploma-programs/diploma-in-financial-jurisprudence/?$ /academics/programmes/islamic-banking-finance/ [R=301,L]
+  RewriteRule ^academics/short-courses/technical-approaches-to-research/?$ /academics/programmes/research-methods-academic-writing/ [R=301,L]
+  RewriteRule ^about/leadership/?$ /about/team/ [R=301,L]
+
+  # Serve trailing-slash directories (Next.js static export)
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

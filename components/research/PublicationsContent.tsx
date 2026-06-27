@@ -11,6 +11,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import AnimatedSection from '@/components/shared/AnimatedSection';
+import ApplyNowButton from '@/components/shared/ApplyNowButton';
 import { institutionIntro, institutionMotto } from '@/lib/data/institution';
 import { gcltJournals } from '@/lib/data/journals';
 import {
@@ -202,9 +203,13 @@ export default function PublicationsContent() {
                 <Link href="/research/call-for-papers" className="btn-primary">
                   Call for Papers
                 </Link>
-                <a href={`mailto:${SITE.emails.research}`} className="btn-outline">
-                  Email {SITE.emails.research}
-                </a>
+                <ApplyNowButton
+                  formKey="research"
+                  className="btn-outline inline-flex items-center gap-2"
+                  fallbackHref={`mailto:${SITE.emails.research}`}
+                >
+                  Submit Your Paper
+                </ApplyNowButton>
               </div>
             </div>
           </AnimatedSection>

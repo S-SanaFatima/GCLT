@@ -1,10 +1,12 @@
 import { Metadata } from 'next';
 import PageHero from '@/components/shared/PageHero';
 import Link from 'next/link';
-import AdmissionsProgramIntent from '@/components/academics/AdmissionsProgramIntent';
+import {
+  AdmissionsProgramIntentFromQuery,
+  AdmissionsApplySectionsFromQuery,
+} from '@/components/academics/AdmissionsQuerySections';
 import DeliveryModesList from '@/components/academics/DeliveryModesList';
 import { programs } from '@/lib/data/programs';
-import { SITE } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Admissions',
@@ -25,8 +27,8 @@ const openProgrammes = programs
   }));
 
 const requiredDocuments = [
-  'Completed application form (via email)',
-  'Academic transcripts and certificates',
+  'Completed online application form',
+  'Academic transcripts and certificates (upload in form)',
   'Statement of purpose (500 words)',
   'CV / resume',
   'Two references (for diploma programmes)',
@@ -34,14 +36,7 @@ const requiredDocuments = [
   'Your preferred delivery mode (online, in-person, or hybrid)',
 ];
 
-interface AdmissionsPageProps {
-  searchParams?: {
-    program?: string;
-    delivery?: string;
-  };
-}
-
-export default function AdmissionsPage({ searchParams }: AdmissionsPageProps) {
+export default function AdmissionsPage() {
   return (
     <>
       <PageHero
@@ -55,10 +50,7 @@ export default function AdmissionsPage({ searchParams }: AdmissionsPageProps) {
       />
       <section className="section-padding bg-white">
         <div className="container-gclt max-w-3xl">
-          <AdmissionsProgramIntent
-            programSlug={searchParams?.program}
-            delivery={searchParams?.delivery}
-          />
+          <AdmissionsProgramIntentFromQuery />
 
           <h2 className="mb-6 text-primary">Open Programmes & Deadlines</h2>
           <div className="mb-10 space-y-4">
@@ -96,7 +88,7 @@ export default function AdmissionsPage({ searchParams }: AdmissionsPageProps) {
           <ol className="mb-8 list-decimal space-y-3 pl-5 text-[var(--color-text-light)]">
             <li>Review programme details and choose your preferred delivery mode on the programme page</li>
             <li>Prepare required documents (see list below)</li>
-            <li>Email your application to admissions@gclt.com.pk with the programme name and delivery mode in the subject line</li>
+            <li>Complete the online application form below and upload your documents</li>
             <li>Attend an interview if shortlisted</li>
           </ol>
 
@@ -118,15 +110,7 @@ export default function AdmissionsPage({ searchParams }: AdmissionsPageProps) {
             </Link>
           </div>
 
-          <div className="mt-10 rounded-card bg-primary p-8 text-white">
-            <h3 className="mb-2 text-white">Ready to apply?</h3>
-            <p className="mb-4 text-gray-200">
-              Email your application and documents to our admissions team.
-            </p>
-            <a href={`mailto:${SITE.emails.admissions}?subject=Programme Application`} className="btn-accent">
-              Email {SITE.emails.admissions}
-            </a>
-          </div>
+          <AdmissionsApplySectionsFromQuery />
         </div>
       </section>
     </>

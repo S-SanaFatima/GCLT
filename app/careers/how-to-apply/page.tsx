@@ -25,7 +25,7 @@ export default function HowToApplyPage() {
           <ol className="mb-10 list-decimal space-y-3 pl-5 text-[var(--color-text-light)]">
             <li>Review available opportunities on our Careers pages</li>
             <li>Prepare your CV, cover letter, and any required documents</li>
-            <li>Email your application to careers@gclt.com.pk with the role title in the subject line</li>
+            <li>Complete the online application form below and upload your CV</li>
             <li>Shortlisted candidates will be contacted for an interview</li>
           </ol>
           <Link href="/careers/job-openings" className="btn-outline mb-10 inline-flex">

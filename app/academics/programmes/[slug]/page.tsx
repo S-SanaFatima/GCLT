@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
-import { notFound, redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
+import ClientRedirect from '@/components/shared/ClientRedirect';
 import ProgramPageTemplate from '@/components/academics/ProgramPageTemplate';
 import {
   cataloguePrograms,
@@ -13,7 +14,8 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return cataloguePrograms.map((p) => ({ slug: p.slug }));
+  const legacy = Object.keys(legacyProgramSlugs).map((slug) => ({ slug }));
+  return [...cataloguePrograms.map((p) => ({ slug: p.slug })), ...legacy];
 }
 
 export function generateMetadata({ params }: Props): Metadata {
@@ -27,7 +29,9 @@ export function generateMetadata({ params }: Props): Metadata {
 
 export default function ProgrammePage({ params }: Props) {
   if (legacyProgramSlugs[params.slug]) {
-    redirect(`/academics/programmes/${legacyProgramSlugs[params.slug]}`);
+    return (
+      <ClientRedirect to={`/academics/programmes/${legacyProgramSlugs[params.slug]}/`} />
+    );
   }
 
   const program = getProgramBySlug(params.slug);

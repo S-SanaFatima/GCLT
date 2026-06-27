@@ -1,3 +1,5 @@
+import { buildGoogleFormUrl } from './googleForms';
+
 export type DeliveryMode = 'online' | 'in-person' | 'hybrid';
 
 export const ALL_DELIVERY_MODES: DeliveryMode[] = ['online', 'in-person', 'hybrid'];
@@ -51,6 +53,26 @@ export function buildProgramApplyMailto(
   );
 
   return `mailto:${email}?subject=${subject}&body=${body}`;
+}
+
+export function buildProgramApplyGoogleFormUrl(
+  programTitle: string,
+  delivery: DeliveryMode,
+): string | null {
+  return buildGoogleFormUrl('admissions', {
+    program: programTitle,
+    delivery: deliveryModeLabels[delivery],
+  });
+}
+
+export function buildProgramInterestGoogleFormUrl(
+  programTitle: string,
+  delivery: DeliveryMode,
+): string | null {
+  return buildGoogleFormUrl('interest', {
+    program: programTitle,
+    delivery: deliveryModeLabels[delivery],
+  });
 }
 
 export const deliveryModeStyles: Record<

@@ -1,7 +1,11 @@
 'use client';
 
-import Link from 'next/link';
-import { buildProgramApplyMailto, buildProgramApplyUrl } from '@/lib/deliveryMode';
+import {
+  buildProgramApplyGoogleFormUrl,
+  buildProgramApplyUrl,
+  buildProgramInterestGoogleFormUrl,
+  deliveryModeLabels,
+} from '@/lib/deliveryMode';
 import { getFeeForDelivery } from '@/lib/data/programs';
 import { SITE } from '@/lib/utils';
 import { useProgramEnrollment } from './ProgramEnrollmentContext';
@@ -30,14 +34,17 @@ export default function ProgramEnrolmentCTA({ className = '', tone = 'dark' }: P
   }
 
   if (program.status === 'launching-soon') {
-    const subject = encodeURIComponent(`Interest: ${program.academicName}`);
-    const body = encodeURIComponent(
-      `I would like to register my interest in ${program.academicName}.\n\nPreferred delivery: ${selectedDelivery}\n\n`,
-    );
+    const interestUrl = buildProgramInterestGoogleFormUrl(program.academicName, selectedDelivery);
+    const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent(`Interest: ${program.academicName}`)}&body=${encodeURIComponent(`Preferred delivery: ${deliveryModeLabels[selectedDelivery]}\n\n`)}`;
 
     return (
       <div className={`space-y-3 ${className}`}>
-        <a href={`mailto:${contactEmail}?subject=${subject}&body=${body}`} className="btn-accent w-full">
+        <a
+          href={interestUrl ?? mailto}
+          target={interestUrl ? '_blank' : undefined}
+          rel={interestUrl ? 'noopener noreferrer' : undefined}
+          className="btn-accent w-full"
+        >
           Register Interest
         </a>
         <p className={`text-center text-xs ${tone === 'dark' ? 'text-gray-300' : 'text-[var(--color-text-light)]'}`}>
@@ -47,22 +54,35 @@ export default function ProgramEnrolmentCTA({ className = '', tone = 'dark' }: P
     );
   }
 
+  const googleFormUrl = buildProgramApplyGoogleFormUrl(program.academicName, selectedDelivery);
   const applyUrl = buildProgramApplyUrl(program.slug, selectedDelivery);
-  const mailtoUrl = buildProgramApplyMailto(program.academicName, selectedDelivery, contactEmail);
+
+  if (googleFormUrl) {
+    return (
+      <div className={`space-y-3 ${className}`}>
+        <a
+          href={googleFormUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-accent w-full"
+        >
+          Apply Now
+        </a>
+        <p className={`text-center text-xs ${tone === 'dark' ? 'text-gray-300' : 'text-[var(--color-text-light)]'}`}>
+          {deliveryModeLabels[selectedDelivery]} · {fee}
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className={`space-y-3 ${className}`}>
-      <Link href={applyUrl} className="btn-accent w-full">
+      <a href={applyUrl} className="btn-accent w-full">
         Apply Now
-      </Link>
-      <a
-        href={mailtoUrl}
-        className={`block text-center text-xs ${
-          tone === 'dark' ? 'text-gray-300 hover:text-white' : 'text-[var(--color-text-light)] hover:text-primary'
-        }`}
-      >
-        Or email your application directly
       </a>
+      <p className={`text-center text-xs ${tone === 'dark' ? 'text-gray-300' : 'text-[var(--color-text-light)]'}`}>
+        {deliveryModeLabels[selectedDelivery]} · {fee}
+      </p>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import PageHero from '@/components/shared/PageHero';
+import ApplyNowButton from '@/components/shared/ApplyNowButton';
 import { jobs, getJobBySlug } from '@/lib/data/jobs';
 import Link from 'next/link';
 import { SITE } from '@/lib/utils';
@@ -10,6 +11,9 @@ interface Props {
 }
 
 export function generateStaticParams() {
+  if (jobs.length === 0) {
+    return [{ slug: '_' }];
+  }
   return jobs.map((j) => ({ slug: j.slug }));
 }
 
@@ -20,6 +24,8 @@ export function generateMetadata({ params }: Props): Metadata {
 }
 
 export default function JobDetailPage({ params }: Props) {
+  if (params.slug === '_') notFound();
+
   const job = getJobBySlug(params.slug);
   if (!job) notFound();
 
@@ -55,9 +61,14 @@ export default function JobDetailPage({ params }: Props) {
             {job.howToApply.map((step) => <li key={step}>{step}</li>)}
           </ol>
           {job.deadline && <p className="mb-6 text-sm text-[var(--color-text-light)]">Deadline: {job.deadline}</p>}
-          <a href={`mailto:${SITE.emails.careers}?subject=Application: ${job.title}`} className="btn-primary inline-flex">
+          <ApplyNowButton
+            formKey="careers"
+            prefill={{ position: job.title }}
+            className="btn-primary inline-flex items-center gap-2"
+            fallbackHref={`mailto:${SITE.emails.careers}?subject=${encodeURIComponent(`Application: ${job.title}`)}`}
+          >
             Apply Now
-          </a>
+          </ApplyNowButton>
           <Link href="/careers/job-openings" className="btn-outline ml-4 inline-flex">
             ← Back
           </Link>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Calendar, MapPin, User } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
+import ApplyNowButton from '@/components/shared/ApplyNowButton';
 import AnimatedSection from '@/components/shared/AnimatedSection';
 import { gcltEvents, getEventBySlug, getEventCoverSrc, getEventGalleryItems } from '@/lib/data/events';
 import { formatDate, SITE } from '@/lib/utils';
@@ -162,12 +163,15 @@ export default function EventDetailPage({ params }: Props) {
                   </dl>
                   {isUpcoming && (
                     <div className="border-t border-border/60 p-5">
-                      <a
-                        href={`mailto:${SITE.emails.admissions}?subject=${encodeURIComponent(`Event Registration: ${event.title}`)}`}
-                        className="btn-accent w-full text-sm"
+                      <ApplyNowButton
+                        formKey="event"
+                        prefill={{ event: event.title }}
+                        className="btn-accent w-full text-sm inline-flex items-center justify-center gap-2"
+                        fallbackHref={`mailto:${SITE.emails.admissions}?subject=${encodeURIComponent(`Event Registration: ${event.title}`)}`}
+                        openInNewTab
                       >
                         Register interest
-                      </a>
+                      </ApplyNowButton>
                     </div>
                   )}
                 </div>
