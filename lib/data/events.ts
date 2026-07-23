@@ -9,6 +9,14 @@ export type EventFormat =
   | 'Lecture'
   | 'Mobility Programme';
 
+export interface EventOrganizer {
+  name: string;
+  role: string;
+  affiliation?: string;
+  photo?: string;
+  href?: string;
+}
+
 export interface GCLTEvent {
   slug: string;
   title: string;
@@ -19,6 +27,7 @@ export interface GCLTEvent {
   location?: string;
   format: EventFormat;
   speakers?: string[];
+  organizers?: EventOrganizer[];
   tags: string[];
   /** Set when cover.jpg is uploaded; null shows placeholder */
   coverImage: string | null;
@@ -70,22 +79,75 @@ export const gcltEvents: GCLTEvent[] = [
     slug: '1st-international-conference-ai-society',
     title: '1st International Conference on AI & Society',
     excerpt:
-      'GCLT announces its inaugural international conference exploring artificial intelligence through Islamic, Pakistani, and global perspectives.',
+      'GCLT hosted its inaugural international conference at the Pakistan Academy of Letters, examining how artificial intelligence is reshaping society — from religion, law, and ethics to culture, security, and public discourse.',
     content: `
-      <p>GCLT announces its inaugural international conference exploring artificial intelligence through Islamic, Pakistani, and global perspectives.</p>
-      <p>This landmark gathering will bring together scholars, policymakers, technologists, and community leaders to examine the ethico-philosophical dimensions of AI in society.</p>
-      <p>Register your interest at <a href="mailto:events@gclt.com.pk">events@gclt.com.pk</a>.</p>
+      <p>The <strong>Global Centre for Learning &amp; Training (GCLT)</strong> hosted its <strong>1st International Conference on Artificial Intelligence &amp; Society</strong>, a two-day academic gathering held at the <strong>Pakistan Academy of Letters, Islamabad</strong> (30–31 December, 9:00 AM – 4:00 PM).</p>
+      <p>The conference brought together scholars, researchers, policymakers, and practitioners to examine how artificial intelligence is reshaping society — from religion, law, and ethics to culture, security, and public discourse.</p>
+      <p>A key dimension of the conference was the engagement of religious scholarship with emerging AI technologies — examining questions of ethics, moral responsibility, and how classical intellectual traditions can respond to the challenges posed by intelligent machines.</p>
+      <h3>Conference Themes</h3>
+      <p>The conference was structured around four thematic tracks, with Theme 4 focusing on <strong>Artificial Intelligence: Religion, Literature, Security, and Journalism</strong> — exploring AI&rsquo;s implications for religious scholarship and ethics, its impact on creative writing and literary production, national and information security, and the future of journalism in an age of automated content.</p>
+      <h3>Conference Team</h3>
+      <ul>
+        <li><strong>Dr. Bilal Hussain</strong> — Head, Legal Research, GCLT; Assistant Professor, Faculty of Law, University of Sialkot; Postdoctoral Fellow, International Islamic University, Malaysia</li>
+        <li><strong>Dr. Imtiaz Ahmed</strong> — Head, IRWS Research Unit (Islam, Religion, West and Society), GCLT; Associate Professor, Grand Asian University, Sialkot</li>
+        <li><strong>Dr. Hafiz Muhammad Siddique</strong> — Head, HSL Research Unit (Harmonization of Sharīʿah and Law), GCLT; Assistant Professor, Faculty of Sharīʿah &amp; Law, International Islamic University, Islamabad; Editor-in-Chief, Al-Kashaf Research Journal</li>
+        <li><strong>Dr. Kulsoom Fatima</strong> — Head, Gender and Women&rsquo;s Studies, GCLT; Assistant Professor, Jinnah School of Public Policy and Leadership, NUST, Islamabad</li>
+        <li><strong>Dr. Muhammad Nadir</strong> — In-Charge, Research &amp; Publication, GCLT; International Islamic University, Malaysia</li>
+      </ul>
+      <h3>Collaborating Partners</h3>
+      <p>The conference was held in collaboration with the Islamabad Capital Territory Administration (ICTA), Pakistan Academy of Letters, Bahria University, the International Quran Research Association (IQRA), CarboX, and other academic and institutional partners.</p>
+      <p>Contact: <a href="tel:+923339381201">+92 333 9381201</a> | <a href="https://www.gclt.com.pk">www.gclt.com.pk</a> | @gclt.official</p>
     `,
-    date: '2026-07-15',
-    location: 'Islamabad, Pakistan',
+    date: '2025-12-30',
+    endDate: '2025-12-31',
+    location: 'Pakistan Academy of Letters, Islamabad',
     format: 'Conference',
-    tags: ['AI', 'Conference', 'Research', 'Technology'],
-    featured: true,
+    speakers: [
+      'Dr. Bilal Hussain',
+      'Dr. Imtiaz Ahmed',
+      'Dr. Hafiz Muhammad Siddique',
+      'Dr. Kulsoom Fatima',
+      'Dr. Muhammad Nadir',
+    ],
+    organizers: [
+      {
+        name: 'Dr. Kulsoom Fatima',
+        role: 'Head, Gender and Women\'s Studies',
+        affiliation:
+          'Assistant Professor, Jinnah School of Public Policy and Leadership, National University of Sciences and Technology (NUST), Islamabad',
+        photo: '/images/events/1st-international-conference-ai-society/organizer-kulsoom.png',
+        href: '/about/team/dr-kulsoom-fatima',
+      },
+      {
+        name: 'Dr. Hafiz Muhammad Siddique',
+        role: 'Head, HSL Research Unit — Harmonization of Sharīʿah and Law (HSL)',
+        affiliation:
+          'Assistant Professor, Faculty of Sharīʿah & Law, International Islamic University, Islamabad, Pakistan · Editor-in-Chief, Al-Kashaf Research Journal',
+        photo: '/images/events/1st-international-conference-ai-society/organizer-siddique.png',
+        href: '/about/team/dr-hafiz-muhammad-siddique',
+      },
+      {
+        name: 'Mr. Gohar Ali Goharvi',
+        role: 'Head, Strategic Partnerships and External Engagement, GCLT',
+        photo: '/images/events/1st-international-conference-ai-society/organizer-gohar.png',
+        href: '/about/team/mr-gohar-ali-goharvi',
+      },
+    ],
+    tags: ['AI', 'Conference', 'Research', 'Technology', 'Society'],
     coverImage: '/images/events/1st-international-conference-ai-society/cover.png',
-    galleryImages: [],
+    coverFit: 'contain',
+    coverWidth: 300,
+    coverHeight: 300,
+    galleryImages: Array.from(
+      { length: 11 },
+      (_, i) => `/images/events/1st-international-conference-ai-society/gallery-${i + 1}.png`,
+    ),
     imagePaths: {
       cover: '/images/events/1st-international-conference-ai-society/cover.png',
-      gallery: [],
+      gallery: Array.from(
+        { length: 11 },
+        (_, i) => `/images/events/1st-international-conference-ai-society/gallery-${i + 1}.png`,
+      ),
     },
   },
   {

@@ -9,7 +9,7 @@ import { coreValues } from '@/lib/data/coreValues';
 import { institutionMotto } from '@/lib/data/institution';
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 1, y: 16 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
@@ -85,7 +85,7 @@ export default function CoreValuesContent() {
             <AnimatedSection delay={0.15} className="mt-14">
               <motion.div
                 className="mx-auto max-w-3xl rounded-2xl border border-primary/15 bg-gradient-to-r from-primary/[0.06] via-white to-accent/[0.08] px-8 py-8 text-center shadow-card"
-                initial={{ opacity: 0, scale: 0.98 }}
+                initial={{ opacity: 1, scale: 0.98 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}

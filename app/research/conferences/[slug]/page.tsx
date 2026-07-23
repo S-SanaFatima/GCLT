@@ -11,7 +11,7 @@ const conferences: Record<string, { title: string; subtitle: string; description
     title: '1st International Conference on AI & Society',
     subtitle: 'Bridging Islam, Pakistan, and Global Perspectives',
     description:
-      'GCLT\'s inaugural international conference explores artificial intelligence through Islamic, Pakistani, and global perspectives. Register your interest at events@gclt.com.pk.',
+      'GCLT hosted its 1st International Conference on Artificial Intelligence & Society on 30–31 December at the Pakistan Academy of Letters, Islamabad. The two-day gathering brought together scholars, researchers, and policymakers to examine how AI is reshaping society — from religion, law, and ethics to culture, security, and public discourse. View the full recap, team details, and photo gallery on our events page.',
   },
   'global-summit-shariah-law': {
     title: 'Global Summit on Harmonisation of Shari\'ah and Law',
@@ -62,9 +62,19 @@ export default function ConferencePage({ params }: Props) {
       <section className="section-padding bg-white">
         <div className="container-gclt max-w-3xl">
           <p className="mb-8 text-[var(--color-text-light)]">{conf.description}</p>
-          <Link href="/research/conferences" className="btn-outline inline-flex">
-            ← Back to Conferences
-          </Link>
+          <div className="flex flex-wrap gap-4">
+            {params.slug === 'ai-society-conference' && (
+              <Link
+                href="/updates/events/1st-international-conference-ai-society"
+                className="btn-primary inline-flex"
+              >
+                View Event Recap &amp; Gallery
+              </Link>
+            )}
+            <Link href="/research/conferences" className="btn-outline inline-flex">
+              ← Back to Conferences
+            </Link>
+          </div>
         </div>
       </section>
     </>

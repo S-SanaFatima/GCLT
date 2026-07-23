@@ -53,7 +53,7 @@ const identityPills = [
 ];
 
 const container = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },
   show: {
     opacity: 1,
     transition: { staggerChildren: 0.14, delayChildren: 0.1 },
@@ -61,7 +61,7 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, x: -24 },
+  hidden: { opacity: 1, x: -16 },
   show: {
     opacity: 1,
     x: 0,
@@ -146,7 +146,7 @@ export default function AboutIntroAnimated() {
             <AnimatedSection delay={0.15} className="lg:sticky lg:top-28 lg:self-start">
               <motion.div
                 className="relative overflow-hidden rounded-3xl border border-primary/15 bg-white p-8 shadow-elevated"
-                initial={{ opacity: 0, y: 32 }}
+                initial={{ opacity: 1, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -171,7 +171,7 @@ export default function AboutIntroAnimated() {
                     {identityPills.map(({ icon: Icon, label }, idx) => (
                       <motion.li
                         key={label}
-                        initial={{ opacity: 0, x: 16 }}
+                        initial={{ opacity: 1, x: 12 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.25 + idx * 0.1, duration: 0.45 }}

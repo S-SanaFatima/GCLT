@@ -31,12 +31,12 @@ const slides = [
   },
   {
     title: '1st International Conference on AI & Society',
-    subtitle: 'Exploring Artificial Intelligence through Islamic & Global Perspectives',
-    cta: 'Learn More',
-    href: '/research/conferences/ai-society-conference',
+    subtitle: "Highlights from GCLT's inaugural conference at the Pakistan Academy of Letters",
+    cta: 'View Recap & Gallery',
+    href: '/updates/events/1st-international-conference-ai-society',
     image: heroSlideImages[2],
     num: '03',
-    badge: 'Upcoming Conference',
+    badge: 'Past Conference',
   },
   {
     title: "Global Summit on Harmonisation of Shari'ah and Law",

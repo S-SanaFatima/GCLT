@@ -7,16 +7,15 @@ export const metadata: Metadata = {
   description: 'International conferences and summits hosted by the Global Centre for Learning & Training.',
 };
 
-const upcoming = [
+const upcoming: { slug: string; title: string; subtitle: string; date: string }[] = [];
+
+const past = [
   {
     slug: 'ai-society-conference',
     title: '1st International Conference on AI & Society',
     subtitle: 'Bridging Islam, Pakistan, and Global Perspectives',
-    date: '2026',
+    date: '30–31 December 2025',
   },
-];
-
-const past = [
   {
     slug: 'global-summit-shariah-law',
     title: 'First Global Summit on Harmonisation of Shari\'ah and Law (GSHSL)',
@@ -41,24 +40,30 @@ export default function ConferencesPage() {
         <div className="container-gclt">
           <h2 className="mb-6 text-primary">Upcoming Conferences</h2>
           <div className="mb-12 space-y-6">
-            {upcoming.map((conf) => (
-              <Link
-                key={conf.slug}
-                href={`/research/conferences/${conf.slug}`}
-                className="card block p-6 transition-shadow hover:shadow-lg"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-lg font-semibold text-primary">{conf.title}</h3>
-                    <p className="mt-1 text-sm text-[var(--color-text-light)]">{conf.subtitle}</p>
-                    <p className="mt-2 text-sm text-mid-gray">{conf.date}</p>
+            {upcoming.length === 0 ? (
+              <p className="text-[var(--color-text-light)]">
+                No upcoming conferences at this time. Explore our past conferences below.
+              </p>
+            ) : (
+              upcoming.map((conf) => (
+                <Link
+                  key={conf.slug}
+                  href={`/research/conferences/${conf.slug}`}
+                  className="card block p-6 transition-shadow hover:shadow-lg"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-lg font-semibold text-primary">{conf.title}</h3>
+                      <p className="mt-1 text-sm text-[var(--color-text-light)]">{conf.subtitle}</p>
+                      <p className="mt-2 text-sm text-mid-gray">{conf.date}</p>
+                    </div>
+                    <span className="shrink-0 rounded-full bg-accent/20 px-3 py-1 text-xs font-medium text-accent-dark">
+                      Upcoming
+                    </span>
                   </div>
-                  <span className="shrink-0 rounded-full bg-accent/20 px-3 py-1 text-xs font-medium text-accent-dark">
-                    Upcoming
-                  </span>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))
+            )}
           </div>
 
           <h2 id="past" className="mb-6 text-primary">

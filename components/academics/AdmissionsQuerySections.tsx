@@ -64,7 +64,7 @@ function ApplySectionsInner() {
 
 export function AdmissionsProgramIntentFromQuery() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<AdmissionsProgramIntent />}>
       <ProgramIntentInner />
     </Suspense>
   );
@@ -72,7 +72,31 @@ export function AdmissionsProgramIntentFromQuery() {
 
 export function AdmissionsApplySectionsFromQuery() {
   return (
-    <Suspense fallback={null}>
+    <Suspense
+      fallback={
+        <>
+          <div className="mt-10 rounded-card bg-primary p-8 text-white">
+            <h3 className="mb-2 text-white">Ready to apply?</h3>
+            <p className="mb-4 text-gray-200">
+              {isGoogleFormConfigured('admissions')
+                ? 'Use the secure application form below to submit your application and upload documents.'
+                : 'Complete the online application form once configured, or contact admissions.'}
+            </p>
+            <ApplyNowButton
+              formKey="admissions"
+              className="btn-accent inline-flex items-center gap-2"
+              fallbackHref="#application-form"
+              openInNewTab={false}
+            >
+              {isGoogleFormConfigured('admissions') ? 'Go to application form' : 'Apply Now'}
+            </ApplyNowButton>
+          </div>
+          <div className="mt-12">
+            <AdmissionsApplicationForm />
+          </div>
+        </>
+      }
+    >
       <ApplySectionsInner />
     </Suspense>
   );

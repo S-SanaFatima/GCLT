@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import EventCoverImage from '@/components/updates/EventCoverImage';
 import EventGallery from '@/components/updates/EventGallery';
+import EventOrganizers from '@/components/updates/EventOrganizers';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Calendar, MapPin, User } from 'lucide-react';
@@ -108,6 +109,10 @@ export default function EventDetailPage({ params }: Props) {
                   className="prose mt-8 max-w-none text-[var(--color-text-light)]"
                   dangerouslySetInnerHTML={{ __html: event.content }}
                 />
+
+                {event.organizers && event.organizers.length > 0 && (
+                  <EventOrganizers organizers={event.organizers} />
+                )}
 
                 <EventGallery event={event} />
               </AnimatedSection>
