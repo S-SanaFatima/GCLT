@@ -76,6 +76,129 @@ export function getEventGalleryItems(event: GCLTEvent) {
 
 export const gcltEvents: GCLTEvent[] = [
   {
+    slug: 'gen-z-and-family-relationships',
+    title: 'Gen-Z and Family Relationships: Islamic Ethics — Bridging the Gap',
+    excerpt:
+      'An evening Zoom session with Dr. Hafiz Muhammad Siddique on Gen-Z and family relationships in the light of Islamic ethics — bridging the gap between generations.',
+    content: `
+      <p>The <strong>Global Centre for Learning &amp; Training (GCLT)</strong>, Islamabad, invites you to a webinar on <strong>Gen-Z and Family Relationships: Islamic Ethics — Bridging the Gap</strong>.</p>
+      <p dir="rtl" lang="ur" class="text-right text-lg leading-relaxed">جنریشن زی اور خاندانی تعلقات<br />اسلامی اخلاقیات کی روشنی میں۔</p>
+      <p>The session explores how Islamic ethical teachings can help bridge gaps between Generation Z and the family — strengthening understanding, responsibility, and care across generations.</p>
+      <h3>Speaker</h3>
+      <ul>
+        <li><strong>Dr. Hafiz Muhammad Siddique</strong> — Post Doc: Faculty of Law, University of Oxford, UK</li>
+      </ul>
+      <h3>Event details</h3>
+      <ul>
+        <li><strong>Date:</strong> Friday, July 24, 2026</li>
+        <li><strong>Time:</strong> 9:00 PM</li>
+        <li><strong>Platform:</strong> Zoom</li>
+        <li><strong>Meeting ID:</strong> 387 961 7241</li>
+      </ul>
+      <p>Contact: <a href="tel:+923339381201">+92 333 9381201</a> | <a href="https://www.gclt.com.pk">www.gclt.com.pk</a></p>
+    `,
+    date: '2026-07-24',
+    location: 'Zoom (Online)',
+    format: 'Webinar',
+    speakers: ['Dr. Hafiz Muhammad Siddique'],
+    organizers: [
+      {
+        name: 'Dr. Hafiz Muhammad Siddique',
+        role: 'Speaker',
+        affiliation: 'Post Doc: Faculty of Law, University of Oxford, UK',
+        photo: '/images/faculty/dr-hafiz-muhammad-siddique.png',
+        href: '/people/dr-hafiz-muhammad-siddique',
+      },
+    ],
+    tags: ['Gen-Z', 'Family', 'Islamic Ethics', 'Webinar'],
+    featured: true,
+    coverImage: '/images/events/gen-z-and-family-relationships/cover.png',
+    coverFit: 'contain',
+    galleryImages: [
+      '/images/events/gen-z-and-family-relationships/gallery-1.png',
+      '/images/events/gen-z-and-family-relationships/gallery-2.png',
+    ],
+    imagePaths: {
+      cover: '/images/events/gen-z-and-family-relationships/cover.png',
+      gallery: [
+        '/images/events/gen-z-and-family-relationships/gallery-1.png',
+        '/images/events/gen-z-and-family-relationships/gallery-2.png',
+      ],
+    },
+  },
+  {
+    slug: 'tradition-technology-and-leadership',
+    title: 'Tradition, Technology, and Leadership: AI & Ulama One-Day Workshop',
+    excerpt:
+      'A one-day workshop for scholars and graduates on artificial intelligence and the changing academic and daʿwah requirements — learning to leverage AI and modern tools for heritage and leadership.',
+    content: `
+      <p>The <strong>Global Centre for Learning &amp; Training (GCLT)</strong>, Islamabad, is organising a one-day workshop for ʿulamāʾ and fuḍalāʾ:</p>
+      <p dir="rtl" lang="ur" class="text-right text-lg leading-relaxed">علماء و فضلاء کے لیے ایک روزہ ورکشاپ<br />مصنوعی ذہانت اور علماء و فضلاء کے لیے بدلتے علمی و دعوتی تقاضے</p>
+      <p><strong>Tradition, Technology, and Leadership</strong> — learn how to leverage Artificial Intelligence (AI) and modern tools to advance your heritage and leadership in a rapidly changing world.</p>
+      <h3>Speakers</h3>
+      <ul>
+        <li><strong>Dr. Imtiaz Ahmad</strong> — Director, GCLT; Associate Professor, Grand Asian University, Sialkot</li>
+        <li><strong>Hafiz Niaz Ahmad Al-Azhari</strong> — Principal, Dar-ul-Uloom Tajdar-e-Madina, Sialkot</li>
+        <li><strong>Hafiz Gohar Ali</strong> — Head, Strategic Partnerships and External Engagement, GCLT</li>
+      </ul>
+      <h3>Event details</h3>
+      <ul>
+        <li><strong>Date:</strong> Sunday, 26 July 2026</li>
+        <li><strong>Time:</strong> 10:00 AM – 12:00 PM</li>
+        <li><strong>Venue:</strong> Dar-ul-Uloom Tajdar-e-Madina, Shahabpura Road, Sialkot</li>
+      </ul>
+      <p dir="rtl" lang="ur" class="text-right">دار العلوم تاجدارِ مدینہ، شہاب پورہ روڈ، سیالکوٹ</p>
+      <p>Organised with support from GCLT research journals Al-Kashaf, Al-Salihat, and Al-Haqeeqah.</p>
+      <p>Contact: <a href="tel:+923339381201">+92 333 9381201</a> | <a href="https://www.gclt.com.pk">www.gclt.com.pk</a></p>
+    `,
+    date: '2026-07-26',
+    location: 'Dar-ul-Uloom Tajdar-e-Madina, Shahabpura Road, Sialkot',
+    format: 'Workshop',
+    speakers: [
+      'Dr. Imtiaz Ahmad',
+      'Hafiz Niaz Ahmad Al-Azhari',
+      'Hafiz Gohar Ali',
+    ],
+    organizers: [
+      {
+        name: 'Dr. Imtiaz Ahmad',
+        role: 'Director, GCLT',
+        affiliation: 'Associate Professor, Grand Asian University, Sialkot',
+        photo: '/images/faculty/dr-imtiaz-ahmed.png',
+        href: '/people/dr-imtiaz-ahmed',
+      },
+      {
+        name: 'Hafiz Niaz Ahmad Al-Azhari',
+        role: 'Principal',
+        affiliation: 'Dar-ul-Uloom Tajdar-e-Madina, Sialkot',
+      },
+      {
+        name: 'Hafiz Gohar Ali',
+        role: 'Head, Strategic Partnerships and External Engagement',
+        affiliation: 'Global Centre for Learning & Training (GCLT)',
+        photo: '/images/faculty/mr-gohar-ali-goharvi.png',
+        href: '/people/mr-gohar-ali-goharvi',
+      },
+    ],
+    tags: ['AI', 'Ulama', 'Workshop', 'Sialkot', 'Leadership'],
+    featured: true,
+    coverImage: '/images/events/tradition-technology-and-leadership/cover.png',
+    coverFit: 'contain',
+    galleryImages: [
+      '/images/events/tradition-technology-and-leadership/cover.png',
+      '/images/events/tradition-technology-and-leadership/gallery-1.png',
+      '/images/events/tradition-technology-and-leadership/gallery-2.png',
+    ],
+    imagePaths: {
+      cover: '/images/events/tradition-technology-and-leadership/cover.png',
+      gallery: [
+        '/images/events/tradition-technology-and-leadership/cover.png',
+        '/images/events/tradition-technology-and-leadership/gallery-1.png',
+        '/images/events/tradition-technology-and-leadership/gallery-2.png',
+      ],
+    },
+  },
+  {
     slug: '1st-international-conference-ai-society',
     title: '1st International Conference on AI & Society',
     excerpt:
@@ -116,7 +239,7 @@ export const gcltEvents: GCLTEvent[] = [
         affiliation:
           'Assistant Professor, Jinnah School of Public Policy and Leadership, National University of Sciences and Technology (NUST), Islamabad',
         photo: '/images/events/1st-international-conference-ai-society/organizer-kulsoom.png',
-        href: '/about/team/dr-kulsoom-fatima',
+        href: '/people/dr-kulsoom-fatima',
       },
       {
         name: 'Dr. Hafiz Muhammad Siddique',
@@ -124,13 +247,13 @@ export const gcltEvents: GCLTEvent[] = [
         affiliation:
           'Assistant Professor, Faculty of Sharīʿah & Law, International Islamic University, Islamabad, Pakistan · Editor-in-Chief, Al-Kashaf Research Journal',
         photo: '/images/events/1st-international-conference-ai-society/organizer-siddique.png',
-        href: '/about/team/dr-hafiz-muhammad-siddique',
+        href: '/people/dr-hafiz-muhammad-siddique',
       },
       {
         name: 'Mr. Gohar Ali Goharvi',
         role: 'Head, Strategic Partnerships and External Engagement, GCLT',
         photo: '/images/events/1st-international-conference-ai-society/organizer-gohar.png',
-        href: '/about/team/mr-gohar-ali-goharvi',
+        href: '/people/mr-gohar-ali-goharvi',
       },
     ],
     tags: ['AI', 'Conference', 'Research', 'Technology', 'Society'],

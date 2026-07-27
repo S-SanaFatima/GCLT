@@ -13,26 +13,24 @@ export default function AffiliationsBar() {
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <AnimatedSection className="max-w-xl">
             <span className="section-label">Partnerships</span>
-            <h2 className="mt-4 text-3xl font-bold text-primary md:text-4xl">
-              Our Academic Partners & Affiliations
-            </h2>
+            <h2 className="mt-4 text-3xl font-bold text-primary md:text-4xl">Collaborations & Partnerships</h2>
             <p className="mt-4 text-lg text-[var(--color-text-light)]">
-              Collaborating with leading institutions worldwide to advance learning, research, and
-              professional development.
+              Working with selected institutions through confirmed collaborations in research, education,
+              and professional development.
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <Link
-              href="/about/affiliations"
+              href="/about/collaborations-partnerships"
               className="btn-ghost group hidden shrink-0 lg:inline-flex"
             >
-              View all affiliations
+              View All Collaborations
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </AnimatedSection>
         </div>
 
-        <div className="mt-12 grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+        <div className="mt-12 grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {academicPartners.map((partner, i) => (
             <AnimatedSection key={partner.id} delay={i * 0.05} className="h-full">
               <PartnerCard partner={partner} variant="home" />
@@ -56,8 +54,8 @@ export default function AffiliationsBar() {
         </AnimatedSection>
 
         <div className="mt-8 text-center lg:hidden">
-          <Link href="/about/affiliations" className="btn-outline group inline-flex">
-            View all affiliations
+          <Link href="/about/collaborations-partnerships" className="btn-outline group inline-flex">
+            View All Collaborations
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>

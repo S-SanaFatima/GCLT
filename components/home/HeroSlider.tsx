@@ -105,12 +105,12 @@ export default function HeroSlider() {
                 <div className="max-w-3xl">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-4 sm:mb-6">
                     <Sparkles className="h-3.5 w-3.5 text-accent animate-pulse" />
-                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-white/90">
+                    <span className="hero-badge">
                       {slide.badge}
                     </span>
                   </div>
 
-                  <h1 className="mb-4 sm:mb-6 text-3xl font-extrabold leading-[1.1] text-white sm:text-4xl md:text-5xl lg:text-6xl tracking-tight">
+                  <h1 className="hero-title mb-4 sm:mb-6">
                     {slide.title.split(' ').map((word, idx) => {
                       if (
                         word.toLowerCase() === 'learning' ||
@@ -131,7 +131,7 @@ export default function HeroSlider() {
                     })}
                   </h1>
 
-                  <p className="mb-6 sm:mb-8 max-w-xl text-base text-slate-300 md:text-lg font-medium leading-relaxed">
+                  <p className="hero-subtitle mb-6 sm:mb-8 max-w-xl">
                     {slide.subtitle}
                   </p>
 

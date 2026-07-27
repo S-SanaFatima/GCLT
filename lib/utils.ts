@@ -23,6 +23,7 @@ export const SITE = {
     admissions: 'admissions@gclt.com.pk',
     careers: 'careers@gclt.com.pk',
     research: 'research@gclt.com.pk',
+    academy: 'academy@gclt.com.pk',
     events: 'events@gclt.com.pk',
   },
 } as const;

@@ -5,12 +5,23 @@ import type { FacultyMember } from '@/lib/data/faculty';
 
 interface FacultyCardProps {
   member: FacultyMember;
+  /** Which directory context — picks the role line and affiliation emphasis */
+  context?: 'leadership' | 'academic';
 }
 
-export default function FacultyCard({ member }: FacultyCardProps) {
+export default function FacultyCard({ member, context = 'leadership' }: FacultyCardProps) {
+  const gcltRole =
+    context === 'leadership' && member.leadershipDesignation
+      ? member.leadershipDesignation
+      : member.designation;
+
+  const isDualListed =
+    member.directories.includes('executive-leadership') &&
+    member.directories.includes('academic-faculty');
+
   return (
     <Link
-      href={`/about/team/${member.slug}`}
+      href={`/people/${member.slug}`}
       className="group flex gap-4 rounded-xl border border-border/70 bg-white p-3.5 shadow-card transition-all hover:border-primary/25 hover:shadow-elevated sm:gap-5 sm:p-4"
     >
       <div className="relative h-[6.75rem] w-[5.5rem] shrink-0 overflow-hidden rounded-lg bg-[#e8ecf2] sm:h-[7.5rem] sm:w-24">
@@ -25,21 +36,34 @@ export default function FacultyCard({ member }: FacultyCardProps) {
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col justify-center">
-        <h3 className="text-[15px] font-bold leading-snug text-primary transition-colors group-hover:text-accent sm:text-base">
-          {member.name}
-        </h3>
-        {member.designation && (
-          <p className="mt-1 text-xs font-semibold leading-snug text-accent sm:text-[13px]">
-            {member.designation}
-          </p>
+        <div className="flex flex-wrap items-center gap-2">
+          <h3 className="text-[15px] font-bold leading-snug text-primary transition-colors group-hover:text-accent sm:text-base">
+            {member.name}
+          </h3>
+          {isDualListed && (
+            <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+              Also on {context === 'leadership' ? 'Faculty' : 'Leadership'}
+            </span>
+          )}
+        </div>
+
+        {gcltRole && (
+          <p className="mt-1 text-xs font-semibold leading-snug text-accent sm:text-[13px]">{gcltRole}</p>
         )}
-        {member.researchUnit && (
+
+        {context === 'academic' && member.academicCluster && (
+          <p className="mt-0.5 text-[11px] font-medium text-primary/75 sm:text-xs">{member.academicCluster}</p>
+        )}
+
+        {context === 'leadership' && member.researchUnit && (
           <p className="mt-0.5 line-clamp-1 text-[11px] font-medium text-primary/75 sm:text-xs">
             {member.researchUnit}
           </p>
         )}
+
         {member.affiliation && (
           <p className="mt-1.5 line-clamp-2 text-[11px] leading-relaxed text-[var(--color-text-light)] sm:text-xs">
+            <span className="font-medium text-mid-gray">External affiliation: </span>
             {member.affiliation}
           </p>
         )}

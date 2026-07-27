@@ -33,18 +33,50 @@ export const navItems: NavItem[] = [
     label: 'About',
     href: '/about',
     icon: Building2,
-    description: 'Our mission, people, and partnerships',
+    description: 'Institutional profile, values, and partnerships',
     featured: {
-      title: 'Meet Our Faculty',
-      description: 'Scholars and professionals from leading institutions worldwide.',
-      href: '/about/team',
-      cta: 'View Team',
+      title: 'Collaborations & Partnerships',
+      description: 'Confirmed strategic and international academic collaborations.',
+      href: '/about/collaborations-partnerships',
+      cta: 'View Collaborations',
     },
     children: [
-      { label: 'Introduction', href: '/about', description: 'Who we are and what we stand for' },
-      { label: 'Our Team & Faculty', href: '/about/team', description: 'Profiles of our academic community' },
+      { label: 'Institutional Profile', href: '/about', description: 'Who we are and what we stand for' },
       { label: 'Core Values', href: '/about/core-values', description: 'Principles guiding GCLT' },
-      { label: 'Affiliations & Partnerships', href: '/about/affiliations', description: 'Global academic network' },
+      {
+        label: 'Collaborations & Partnerships',
+        href: '/about/collaborations-partnerships',
+        description: 'Strategic and international partners',
+      },
+    ],
+  },
+  {
+    label: 'People',
+    href: '/people',
+    icon: Users,
+    description: 'Leadership, faculty, and international scholars',
+    featured: {
+      title: 'Academic Faculty',
+      description: 'Teaching and research faculty across GCLT discipline clusters.',
+      href: '/people/academic-faculty',
+      cta: 'View Faculty',
+    },
+    children: [
+      {
+        label: 'Leadership & Administration',
+        href: '/people/leadership-administration',
+        description: 'Executive, academic administration, and support',
+      },
+      {
+        label: 'Academic Faculty',
+        href: '/people/academic-faculty',
+        description: 'Teaching and research faculty by cluster',
+      },
+      {
+        label: 'International Adjunct Faculty',
+        href: '/people/international-adjunct-faculty',
+        description: 'Confirmed international appointments',
+      },
     ],
   },
   {

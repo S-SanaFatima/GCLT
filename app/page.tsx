@@ -6,10 +6,12 @@ import LatestNews from '@/components/home/LatestNews';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import AffiliationsBar from '@/components/home/AffiliationsBar';
 import CTABanner from '@/components/home/CTABanner';
+import AnnouncementPopup from '@/components/shared/AnnouncementPopup';
 
 export default function HomePage() {
   return (
     <>
+      <AnnouncementPopup />
       <HeroSlider />
       <StatsBar />
       <AboutSnippet />

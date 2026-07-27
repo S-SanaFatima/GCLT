@@ -15,11 +15,17 @@ export default function NavMenu() {
     return pathname.startsWith(href);
   };
 
+  const dropdownItems = navItems.filter((item) => item.children);
+  const rightAlignedLabels = new Set(
+    dropdownItems.slice(Math.ceil(dropdownItems.length / 2)).map((item) => item.label)
+  );
+
   return (
     <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Main navigation">
       {navItems.map((item) => {
         const Icon = item.icon;
         const active = isActive(item.href);
+        const alignRight = rightAlignedLabels.has(item.label);
 
         return (
           <div
@@ -44,9 +50,13 @@ export default function NavMenu() {
             </Link>
 
             {item.children && openMenu === item.label && (
-              <div className="absolute left-1/2 top-full z-50 w-[min(720px,calc(100vw-2rem))] -translate-x-1/2 pt-3">
-                <div className="mega-panel animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="grid md:grid-cols-[1fr_240px]">
+              <div
+                className={`absolute top-full z-50 w-[min(680px,calc(100vw-2rem))] pt-3 ${
+                  alignRight ? 'right-0' : 'left-0'
+                }`}
+              >
+                <div className="mega-panel animate-in fade-in slide-in-from-top-2 duration-200 overflow-hidden">
+                  <div className="grid md:grid-cols-[1fr_220px]">
                     <div className="grid gap-0.5 p-3 sm:grid-cols-2">
                       {item.children.map((child) => (
                         <Link
@@ -68,10 +78,9 @@ export default function NavMenu() {
                     </div>
 
                     {item.featured && (
-                      <div className="relative overflow-hidden border-t border-border/60 bg-gradient-to-br from-primary to-primary-dark p-6 text-white md:border-l md:border-t-0">
+                      <div className="relative overflow-hidden border-t border-border/60 bg-gradient-to-br from-primary to-primary-dark p-5 text-white md:border-l md:border-t-0">
                         <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-accent/20 blur-2xl" />
-                        <p className="section-label section-label-light mb-3">Featured</p>
-                        <h4 className="mb-2 text-lg font-bold text-white">{item.featured.title}</h4>
+                        <h4 className="mb-2 text-base font-bold text-white">{item.featured.title}</h4>
                         <p className="mb-5 text-sm leading-relaxed text-gray-200">
                           {item.featured.description}
                         </p>

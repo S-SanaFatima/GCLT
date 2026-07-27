@@ -5,28 +5,14 @@ import Link from 'next/link';
 import { X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const POPUP_KEY = 'gclt_popup_seen';
-const EXPIRY_DAYS = 7;
 const NEWS_SLUG = '/updates/gclt-transition-global-centre-learning-training';
+const BANNER_SRC = '/images/announcement/official-announcement.png';
 
 export default function AnnouncementPopup() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   const close = useCallback(() => {
     setVisible(false);
-    const expiry = Date.now() + EXPIRY_DAYS * 24 * 60 * 60 * 1000;
-    localStorage.setItem(POPUP_KEY, expiry.toString());
-  }, []);
-
-  useEffect(() => {
-    const stored = localStorage.getItem(POPUP_KEY);
-    if (stored) {
-      const expiry = parseInt(stored, 10);
-      if (Date.now() < expiry) return;
-    }
-
-    const timer = setTimeout(() => setVisible(true), 2000);
-    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -48,14 +34,14 @@ export default function AnnouncementPopup() {
   return (
     <AnimatePresence>
       {visible && (
-        <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[10000] flex items-center justify-center p-3 sm:p-6">
           <motion.button
             type="button"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"
+            className="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"
             onClick={close}
             aria-label="Dismiss announcement"
           />
@@ -63,49 +49,34 @@ export default function AnnouncementPopup() {
           <motion.div
             role="dialog"
             aria-modal="true"
-            aria-labelledby="announcement-title"
-            initial={{ opacity: 0, scale: 0.96, y: 8 }}
+            aria-label="Official Announcement"
+            initial={{ opacity: 0, scale: 0.97, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.98, y: 4 }}
-            transition={{ duration: 0.25 }}
-            className="relative w-full max-w-sm rounded-2xl border border-border/80 bg-white p-6 text-center shadow-elevated"
+            exit={{ opacity: 0, scale: 0.98, y: 6 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="relative w-auto max-w-[min(92vw,420px)]"
           >
             <button
               type="button"
               onClick={close}
-              className="absolute right-3 top-3 text-[var(--color-text-light)] transition-colors hover:text-primary"
+              className="absolute -right-2 -top-2 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-slate-900/90 text-white shadow-lg transition-colors hover:bg-primary"
               aria-label="Close announcement"
             >
-              <X className="h-4 w-4" />
+              <X className="h-5 w-5" />
             </button>
 
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-accent">
-              Notice
-            </p>
-            <p
-              id="announcement-title"
-              className="mt-3 text-base font-semibold leading-snug text-primary"
-            >
-              GCLT is now the Global Centre for Learning &amp; Training.
-            </p>
-
-            <div className="mt-5 flex items-center justify-center gap-4 text-sm">
-              <Link
-                href={NEWS_SLUG}
-                onClick={close}
-                className="font-semibold text-accent hover:text-accent-dark"
-              >
-                Read more
-              </Link>
-              <span className="text-border">|</span>
-              <button
-                type="button"
-                onClick={close}
-                className="font-medium text-[var(--color-text-light)] hover:text-primary"
-              >
-                Close
-              </button>
-            </div>
+            <Link href={NEWS_SLUG} onClick={close} className="block overflow-hidden rounded-xl shadow-elevated">
+              {/* Native img so the original PNG is used (no Next optimizer downscale → blur on zoom) */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={BANNER_SRC}
+                alt="Official Announcement: GCLT is transitioning to Global Centre for Learning & Training"
+                width={636}
+                height={900}
+                className="h-auto max-h-[min(85vh,720px)] w-full object-contain"
+                draggable={false}
+              />
+            </Link>
           </motion.div>
         </div>
       )}

@@ -23,6 +23,7 @@ const departments = [
   'Admissions',
   'Careers',
   'Research',
+  'Academy',
   'Events',
 ] as const;
 
@@ -31,6 +32,7 @@ const emailMap: Record<string, string> = {
   Admissions: SITE.emails.admissions,
   Careers: SITE.emails.careers,
   Research: SITE.emails.research,
+  Academy: SITE.emails.academy,
   Events: SITE.emails.events,
 };
 
@@ -38,6 +40,7 @@ const departmentPills = [
   { label: 'Admissions', email: SITE.emails.admissions },
   { label: 'Careers', email: SITE.emails.careers },
   { label: 'Research', email: SITE.emails.research },
+  { label: 'Academy', email: SITE.emails.academy },
   { label: 'Events', email: SITE.emails.events },
 ];
 

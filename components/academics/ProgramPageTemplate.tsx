@@ -89,7 +89,7 @@ export default function ProgramPageTemplate({
                         return (
                           <li key={f}>
                             {slug ? (
-                              <Link href={`/about/team/${slug}`} className="text-primary hover:text-accent">
+                              <Link href={`/people/${slug}`} className="text-primary hover:text-accent">
                                 {f}
                               </Link>
                             ) : (

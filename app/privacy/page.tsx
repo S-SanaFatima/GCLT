@@ -19,6 +19,7 @@ export default function PrivacyPage() {
           <p>Information is used solely to respond to enquiries, process applications, and send relevant updates you have subscribed to.</p>
           <h2 className="text-primary">Contact</h2>
           <p>For privacy-related enquiries, contact info@gclt.com.pk.</p>
+          <p className="mt-8 text-xs text-mid-gray">Last updated: July 2026</p>
         </div>
       </section>
     </>

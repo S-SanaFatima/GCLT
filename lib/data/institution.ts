@@ -1,6 +1,6 @@
 /** Official institutional profile content — GCLT */
 
-export const institutionIntro = `The Global Centre for Learning and Training (GCLT) is an independent academic and research institution dedicated to advancing interdisciplinary scholarship, intellectual engagement, and professional development. Guided by the integration of traditional intellectual heritage and contemporary thought, the Centre promotes research, academic exchange, training initiatives, and collaborative engagement across education, society, governance, ethics, religion, technology, public policy, and emerging global challenges at both national and international levels.`;
+export const institutionIntro = `The Global Centre for Learning & Training (GCLT) is an independent academic and research institution dedicated to advancing interdisciplinary scholarship, intellectual engagement, and professional development. Guided by the integration of traditional intellectual heritage and contemporary thought, the Centre promotes research, academic exchange, training initiatives, and collaborative engagement across education, society, governance, ethics, religion, technology, public policy, and emerging global challenges at both national and international levels.`;
 
 export const institutionHeroSubtitle =
   'An independent academic and research institution advancing interdisciplinary scholarship, training, and collaborative engagement across law, society, governance, ethics, religion, technology, and public policy.';

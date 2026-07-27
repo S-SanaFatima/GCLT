@@ -1,5 +1,5 @@
 import ClientRedirect from '@/components/shared/ClientRedirect';
 
 export default function LeadershipPage() {
-  return <ClientRedirect to="/about/team/" />;
+  return <ClientRedirect to="/people/" />;
 }

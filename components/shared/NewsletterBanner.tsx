@@ -23,7 +23,7 @@ export default function NewsletterBanner() {
   };
 
   return (
-    <div className="newsletter-banner-enter fixed bottom-0 left-0 right-0 z-[9998] border-t border-border bg-white p-4 shadow-2xl md:left-auto md:right-6 md:bottom-6 md:max-w-sm md:rounded-card md:border">
+    <div className="newsletter-banner-enter fixed bottom-20 left-0 right-0 z-[9998] border-t border-border bg-white p-4 shadow-2xl md:bottom-6 md:left-auto md:right-24 md:max-w-sm md:rounded-card md:border">
       <button
         onClick={() => setDismissed(true)}
         className="absolute right-3 top-3 text-[var(--color-text-light)] hover:text-dark"

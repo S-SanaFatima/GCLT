@@ -5,8 +5,6 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import PageThemeWrapper from '@/components/layout/PageThemeWrapper';
 import WhatsAppButton from '@/components/shared/WhatsAppButton';
-import AnnouncementPopup from '@/components/shared/AnnouncementPopup';
-import NewsletterBanner from '@/components/shared/NewsletterBanner';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -76,8 +74,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <WhatsAppButton />
-        <AnnouncementPopup />
-        <NewsletterBanner />
       </body>
     </html>
   );

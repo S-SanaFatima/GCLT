@@ -21,6 +21,7 @@ const config: Config = {
       fontFamily: {
         heading: ['Montserrat', 'var(--font-heading)', 'sans-serif'],
         body: ['Inter', 'var(--font-body)', 'sans-serif'],
+        hero: ['"Source Serif 4"', 'var(--font-hero)', 'Georgia', 'serif'],
       },
       boxShadow: {
         card: '0 2px 12px rgba(26,62,140,0.06)',

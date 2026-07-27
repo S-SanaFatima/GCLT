@@ -50,9 +50,9 @@ export default function PageHero({
         {!badge && (
           <span className="section-label section-label-light mb-4">GCLT</span>
         )}
-        <h1 className="max-w-4xl text-white">{title}</h1>
+        <h1 className="hero-title max-w-4xl">{title}</h1>
         {subtitle && (
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-200/90 md:text-xl">
+          <p className="hero-subtitle mt-5 max-w-2xl md:text-xl">
             {subtitle}
           </p>
         )}

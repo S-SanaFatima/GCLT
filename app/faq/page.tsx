@@ -62,11 +62,11 @@ const faqs = [
   },
   {
     q: 'What is IERP?',
-    a: 'IERP stands for International Education & Research Programme — GCLT\'s platform for global academic exchange and collaborative research.',
+    a: 'IERP stands for Islamic Education Revitalization Program — GCLT’s research, curriculum-development, and quality-assurance arm for Islamic learning. The public-facing teaching platform is the GCLT Islamic Learning Academy (coming soon).',
   },
   {
     q: 'How do I contact GCLT?',
-    a: 'General: info@gclt.com.pk | Admissions: admissions@gclt.com.pk | Careers: careers@gclt.com.pk | Phone/WhatsApp: +92 333 9381201',
+    a: 'General: info@gclt.com.pk | Admissions: admissions@gclt.com.pk | Research: research@gclt.com.pk | Academy: academy@gclt.com.pk | Careers: careers@gclt.com.pk | Phone/WhatsApp: +92 333 9381201',
   },
 ];
 

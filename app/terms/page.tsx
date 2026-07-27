@@ -19,6 +19,7 @@ export default function TermsPage() {
           <p>We strive to keep information accurate and up to date but make no warranties regarding completeness or accuracy.</p>
           <h2 className="text-primary">Contact</h2>
           <p>For questions about these terms, contact info@gclt.com.pk.</p>
+          <p className="mt-8 text-xs text-mid-gray">Last updated: July 2026</p>
         </div>
       </section>
     </>

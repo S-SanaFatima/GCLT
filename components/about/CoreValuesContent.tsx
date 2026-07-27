@@ -108,7 +108,7 @@ export default function CoreValuesContent() {
                   our faculty and explore our mission.
                 </p>
                 <div className="flex shrink-0 flex-wrap justify-center gap-3">
-                  <Link href="/about/team" className="btn-outline group text-sm">
+                  <Link href="/people" className="btn-outline group text-sm">
                     Our Team
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
