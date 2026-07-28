@@ -127,74 +127,45 @@ export const gcltEvents: GCLTEvent[] = [
     },
   },
   {
-    slug: 'tradition-technology-and-leadership',
-    title: 'Tradition, Technology, and Leadership: AI & Ulama One-Day Workshop',
+    slug: 'ai-ulama-one-day-workshop',
+    title: 'One-Day Workshop: AI & Ulama',
     excerpt:
-      'A one-day workshop for scholars and graduates on artificial intelligence and the changing academic and daʿwah requirements — learning to leverage AI and modern tools for heritage and leadership.',
+      "Understanding the changing scholarly and da'wah demands of artificial intelligence for scholars and graduates.",
     content: `
-      <p>The <strong>Global Centre for Learning &amp; Training (GCLT)</strong>, Islamabad, is organising a one-day workshop for ʿulamāʾ and fuḍalāʾ:</p>
-      <p dir="rtl" lang="ur" class="text-right text-lg leading-relaxed">علماء و فضلاء کے لیے ایک روزہ ورکشاپ<br />مصنوعی ذہانت اور علماء و فضلاء کے لیے بدلتے علمی و دعوتی تقاضے</p>
-      <p><strong>Tradition, Technology, and Leadership</strong> — learn how to leverage Artificial Intelligence (AI) and modern tools to advance your heritage and leadership in a rapidly changing world.</p>
-      <h3>Speakers</h3>
-      <ul>
-        <li><strong>Dr. Imtiaz Ahmad</strong> — Director, GCLT; Associate Professor, Grand Asian University, Sialkot</li>
-        <li><strong>Hafiz Niaz Ahmad Al-Azhari</strong> — Principal, Dar-ul-Uloom Tajdar-e-Madina, Sialkot</li>
-        <li><strong>Hafiz Gohar Ali</strong> — Head, Strategic Partnerships and External Engagement, GCLT</li>
-      </ul>
-      <h3>Event details</h3>
-      <ul>
-        <li><strong>Date:</strong> Sunday, 26 July 2026</li>
-        <li><strong>Time:</strong> 10:00 AM – 12:00 PM</li>
-        <li><strong>Venue:</strong> Dar-ul-Uloom Tajdar-e-Madina, Shahabpura Road, Sialkot</li>
-      </ul>
-      <p dir="rtl" lang="ur" class="text-right">دار العلوم تاجدارِ مدینہ، شہاب پورہ روڈ، سیالکوٹ</p>
-      <p>Organised with support from GCLT research journals Al-Kashaf, Al-Salihat, and Al-Haqeeqah.</p>
-      <p>Contact: <a href="tel:+923339381201">+92 333 9381201</a> | <a href="https://www.gclt.com.pk">www.gclt.com.pk</a></p>
+      <p>The <strong>Global Centre for Learning &amp; Training (GCLT)</strong>, Islamabad, organised a one-day workshop titled <strong>AI &amp; Ulama</strong>.</p>
+      <p><strong>Understanding the changing scholarly and da'wah demands of artificial intelligence for scholars and graduates.</strong></p>
+      <p>As AI reshapes every field, the scholarly and religious community cannot stand apart. This workshop equips ulama and graduates to understand this technology, benefit from its opportunities, and engage its challenges with insight and confidence.</p>
+      <p>Contact: <a href="tel:+923339381201">0333 9381201</a> | <a href="https://www.gclt.com.pk">www.gclt.com.pk</a></p>
     `,
     date: '2026-07-26',
-    location: 'Dar-ul-Uloom Tajdar-e-Madina, Shahabpura Road, Sialkot',
+    location: 'GCLT Islamabad',
     format: 'Workshop',
-    speakers: [
-      'Dr. Imtiaz Ahmad',
-      'Hafiz Niaz Ahmad Al-Azhari',
-      'Hafiz Gohar Ali',
-    ],
-    organizers: [
-      {
-        name: 'Dr. Imtiaz Ahmad',
-        role: 'Director, GCLT',
-        affiliation: 'Associate Professor, Grand Asian University, Sialkot',
-        photo: '/images/faculty/dr-imtiaz-ahmed.png',
-        href: '/people/dr-imtiaz-ahmed',
-      },
-      {
-        name: 'Hafiz Niaz Ahmad Al-Azhari',
-        role: 'Principal',
-        affiliation: 'Dar-ul-Uloom Tajdar-e-Madina, Sialkot',
-      },
-      {
-        name: 'Hafiz Gohar Ali',
-        role: 'Head, Strategic Partnerships and External Engagement',
-        affiliation: 'Global Centre for Learning & Training (GCLT)',
-        photo: '/images/faculty/mr-gohar-ali-goharvi.png',
-        href: '/people/mr-gohar-ali-goharvi',
-      },
-    ],
-    tags: ['AI', 'Ulama', 'Workshop', 'Sialkot', 'Leadership'],
+    speakers: ['Dr. Imtiaz Ahmad'],
+    tags: ['AI', 'Ulama', 'Workshop', "Da'wah", 'Training'],
     featured: true,
-    coverImage: '/images/events/tradition-technology-and-leadership/cover.png',
+    coverImage: '/images/events/ai-ulama-one-day-workshop/cover.png',
     coverFit: 'contain',
     galleryImages: [
-      '/images/events/tradition-technology-and-leadership/cover.png',
-      '/images/events/tradition-technology-and-leadership/gallery-1.png',
-      '/images/events/tradition-technology-and-leadership/gallery-2.png',
+      '/images/events/ai-ulama-one-day-workshop/gallery-1.png',
+      '/images/events/ai-ulama-one-day-workshop/gallery-2.png',
+      '/images/events/ai-ulama-one-day-workshop/gallery-3.png',
+      '/images/events/ai-ulama-one-day-workshop/gallery-4.png',
+      '/images/events/ai-ulama-one-day-workshop/gallery-5.png',
+      '/images/events/ai-ulama-one-day-workshop/gallery-6.png',
+      '/images/events/ai-ulama-one-day-workshop/gallery-7.png',
+      '/images/events/ai-ulama-one-day-workshop/gallery-8.png',
     ],
     imagePaths: {
-      cover: '/images/events/tradition-technology-and-leadership/cover.png',
+      cover: '/images/events/ai-ulama-one-day-workshop/cover.png',
       gallery: [
-        '/images/events/tradition-technology-and-leadership/cover.png',
-        '/images/events/tradition-technology-and-leadership/gallery-1.png',
-        '/images/events/tradition-technology-and-leadership/gallery-2.png',
+        '/images/events/ai-ulama-one-day-workshop/gallery-1.png',
+        '/images/events/ai-ulama-one-day-workshop/gallery-2.png',
+        '/images/events/ai-ulama-one-day-workshop/gallery-3.png',
+        '/images/events/ai-ulama-one-day-workshop/gallery-4.png',
+        '/images/events/ai-ulama-one-day-workshop/gallery-5.png',
+        '/images/events/ai-ulama-one-day-workshop/gallery-6.png',
+        '/images/events/ai-ulama-one-day-workshop/gallery-7.png',
+        '/images/events/ai-ulama-one-day-workshop/gallery-8.png',
       ],
     },
   },
